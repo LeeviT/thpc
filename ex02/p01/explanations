@@ -1,0 +1,14 @@
+My test program indices.f95 allocates array 'a' to be size of 10 and then
+it assigns value for every element. After that, it loops from 1 to 200000
+and writes n:th element of array 'a' at n:th loop.
+
+However, program is able access elements which are not allocated. The first
+non-allocated element is naturally 11, and its value seems to be 120769.
+Values of other non-allocated elements are 0 and program crashes when n=30200
+if kind of 'a' is default (32 bits). If kind=8 (64 bits) program crashes when
+n=15100 and so on.
+
+That's because the memory line used by array 'a' is divided by
+size of a's element, so naturally there are less memory blocks (i.e. indices)
+available. Summarized, one array reserves at least one memory line, and
+depending on arrays kind, the line is divided into blocks of n bits. 

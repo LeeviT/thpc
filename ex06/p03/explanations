@@ -1,0 +1,19 @@
+I don't see anything I didn't expect to see. Output with 8 procs is
+following:
+
+sending process id:           0 receiving process id:           1
+sending process id:           1 receiving process id:           2
+sending process id:           3 receiving process id:           4
+sending process id:           4 receiving process id:           5
+sending process id:           6 receiving process id:           7
+sending process id:           7 receiving process id:0
+sending process id:           2 receiving process id:           3
+sending process id:           5 receiving process id:           6
+sending process id:           4 first element of msg array:           4
+sending process id:           6 first element of msg array:           6
+sending process id:           2 first element of msg array:           2
+sending process id:           3 first element of msg array:           3
+sending process id:           5 first element of msg array:           5
+sending process id:           0 first element of msg array:           0
+sending process id:           1 first element of msg array:           1
+sending process id:           7 first element of msg array:           7

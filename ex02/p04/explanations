@@ -1,0 +1,14 @@
+gprof didn't give any statistics. I compiled program by command
+
+$ gfortran -O0 -p -g simpleprofiling.f90
+
+And executed it, after that tried to use gprof
+
+$ gprof a.out gmon.out
+
+and
+
+$ gprof a.out
+
+But it doesn't print any statistics, just prints some instructions. Could
+be compiler issue.

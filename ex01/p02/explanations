@@ -1,0 +1,29 @@
+One could put some content to dep_a1 and dep_a2 by running command
+
+$ cowsay great course :D > dep_a1 && cowsay lets compute things :D > dep_b1
+
+Makefile can be executed using 'make target', and it tries to build target
+file and its dependencies. If some of the dependencies is missing make
+gives following error message
+
+make: *** No rule to make target 'dep_xy', needed by 'dep_xz'.  Stop.
+
+If dep_a1 and dep_b1 both exist, running 'make target' cats the following
+content to file target
+
+_________________
+< great course :D >
+-----------------
+       \   ^__^
+        \  (oo)\_______
+           (__)\       )\/\
+               ||----w |
+               ||     ||
+________________________
+< lets compute things :D >
+------------------------
+       \   ^__^
+        \  (oo)\_______
+           (__)\       )\/\
+               ||----w |
+               ||     ||

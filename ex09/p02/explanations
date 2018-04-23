@@ -1,0 +1,12 @@
+Compile:
+
+$ mpifort p02.f95
+
+Execute:
+
+$ mpirun -n 64 ./a.out
+
+
+Works only with >64 processors, otherwise prints error backtrace, with
+"(discriminator 16)" error message and internet doesn't give any answers
+how to interpret it.

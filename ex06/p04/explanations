@@ -1,0 +1,14 @@
+Compilation:
+
+$ mpif90 p04.f95
+
+Execution:
+
+$ mpirun -n 2 ./a.out
+
+
+Latency that I measured: 1.02499996E-06 seconds
+Bandwidth that I measured: 49999.9961 data unit/seconds
+
+I was using 6th node of Ukko HPC cluster. It contains two Intel Xeon 5500
+processors and 32GB of RAM. Ukko nodes use shared memory. 

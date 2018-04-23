@@ -1,0 +1,17 @@
+I compiled the program by command
+
+$ gfortran -ftree-vectorize -fopt-info-vec -O2 p04.f95
+
+And compiler printed the following report:
+
+p04.f95:14:0: note: loop vectorized
+p04.f95:14:0: note: loop versioned for vectorization because of possible aliasing
+
+CPU time using vectorization:
+
+CPU time spent in loop   4.01270017E-02
+
+
+And CPU time by compiling program with -fno-tree-vectorize flag:
+
+CPU time spent in loop   4.26239967E-02

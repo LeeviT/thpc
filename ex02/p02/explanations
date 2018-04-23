@@ -1,0 +1,38 @@
+Debugger session for program 'indices' is started by command
+
+$ gdb indices
+
+And program is executed with 'run' command inside the session. Now the
+program crashes when n=30200. Command 'bt' prints stack:
+
+#0  extract_int (p=p@entry=0x555555778000, len=len@entry=4)
+    at /build/gcc/src/gcc/libgfortran/io/write.c:578
+#1  0x00007ffff7b95e01 in write_integer (dtp=dtp@entry=0x7fffffffe4d0,
+    source=source@entry=0x555555778000 <error: Cannot access memory at address 0x555555778000>, length=length@entry=4) at /build/gcc/src/gcc/libgfortran/io/write.c:1311
+#2  0x00007ffff7b9a85e in list_formatted_write_scalar (dtp=dtp@entry=0x7fffffffe4d0,
+    type=type@entry=BT_INTEGER, p=0x555555778000, kind=kind@entry=4,
+    size=size@entry=4) at /build/gcc/src/gcc/libgfortran/io/write.c:1883
+#3  0x00007ffff7b9b685 in _gfortrani_list_formatted_write (dtp=0x7fffffffe4d0,
+    type=BT_INTEGER, p=<optimized out>, kind=4, size=4, nelems=1)
+    at /build/gcc/src/gcc/libgfortran/io/write.c:1961
+#4  0x0000555555554b9d in indices () at indices.f95:15
+#5  0x0000555555554c2c in main (argc=1, argv=0x7fffffffea9e) at indices.f95:18
+#6  0x00007ffff6ec2f4a in __libc_start_main () from /usr/lib/libc.so.6
+#7  0x000055555555490a in _start ()
+
+Apparently frame #4 has the program variables and it's selected by
+'frame 4'. And printing array 'a' inside frame 4:
+
+$ p a
+
+Output:
+
+$1 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+And 30200th element of array 'a':
+
+$ p a(30200)
+
+Output:
+
+no such vector element

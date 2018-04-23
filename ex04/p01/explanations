@@ -1,0 +1,20 @@
+a) Using 'gfortran -O0 p01a.f95 && ./a.out' CPU times are following:
+
+CPU time spent in non-optimized loop   4.00270075E-02
+CPU time spent in optimized loop   2.66150087E-02
+
+Using 'gfortran -O3 p01a.f95 && ./a.out' CPU times are following:
+
+CPU time spent in non-optimized loop   1.32119954E-02
+CPU time spent in optimized loop   1.30839944E-02
+
+
+b) Using 'gfortran -O0 p01b.f95 && ./a.out' CPU times are following:
+
+CPU time spent in non-optimized loop  0.175448000
+CPU time spent in optimized loop   3.93610001E-02
+
+Using 'gfortran -O3 p01b.f95 && ./a.out' CPU times are following:
+
+CPU time spent in non-optimized loop   5.44750094E-02
+CPU time spent in optimized loop   1.21569932E-02

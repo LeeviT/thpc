@@ -1,0 +1,7 @@
+Compilation:
+
+$ mpif p02.f95
+
+Execution, for example:
+
+$ mpirun -n 16 ./a.out

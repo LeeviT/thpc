@@ -1,0 +1,19 @@
+Bash file unroller.sh creates code which is needed in loops.
+
+Using -O0 (gfortran -O0 p03.f95 && ./a.out) option CPU times are following:
+
+CPU time spent in loop, no unrolling:   1.16200000E-03
+CPU time spent in loop, unrolling level 2:   6.05999958E-04
+CPU time spent in loop, unrolling level 4:   5.29999845E-04
+CPU time spent in loop, unrolling level 8:   4.96999826E-04
+CPU time spent in loop, unrolling level 16:   4.51999716E-04
+CPU time spent in loop, unrolling level 32:   4.40000091E-04
+
+Using -O3 (gfortran -O3 p03.f95 && ./a.out) option CPU times are following:
+
+CPU time spent in loop, no unrolling:   5.00003807E-06
+CPU time spent in loop, unrolling level 2:   4.00003046E-06
+CPU time spent in loop, unrolling level 4:   3.99979763E-06
+CPU time spent in loop, unrolling level 8:   4.00003046E-06
+CPU time spent in loop, unrolling level 16:   4.00003046E-06
+CPU time spent in loop, unrolling level 32:   4.00003046E-06

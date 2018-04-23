@@ -1,0 +1,12 @@
+CPU time using 32-bit flop numbers, n = 100000000: 5.24868917 sec
+
+CPU time using 64-bit flop numbers, n = 100000000: 6.5858160000000003 sec
+
+CPU time using 128-bit flop numbers, n = 100000000: 223.3915460000000 sec
+
+Longer CPU time with 64/128-bit numbers is caused by pipeline latency and
+relatively small caches. Every summation depends on previous sum, so
+program needs to save and get the previous sum from the memory at every
+loop. Bigger numbers take of course more time to operate because pipeline
+can hold limited amount of data so it must flushed and filled again and
+again for just one 128-bit number.

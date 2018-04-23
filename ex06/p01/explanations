@@ -1,0 +1,14 @@
+According to Wikipedia https://en.wikipedia.org/wiki/Eigenvalue_algorithm,
+most eigenvalue algorithms have scaling O(n^3) in the big-oh notation, when
+n is the order of the matrix.
+
+In the picture cputimes.png blue dots are my measurements with various n
+values, red curve is function f2(n)=0.1e-10*n^3 and green curve is function
+f1(n)=0.1e-10*n^3.01. f1(n) is approximate interpolation for the data
+points, so its (and my measurements) scaling in the big-oh notation is
+O(n^3.01). That's quite close to literature values.
+
+File eigendouble.f90 is the actual source code, runscript.sh runs the
+program with various n values and prints the n values and CPU times to
+plotdata file, and plot.py file is used to plot those values to
+cputimes.png file.

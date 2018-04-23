@@ -1,0 +1,14 @@
+Compiling and linking:
+
+$ mpif90 -o mpiex mpiexample.f90
+
+Running:
+
+mpirun -np n ./mpiex
+
+where n=1, 2, 4, 8.
+
+
+In output, message from process 2 (rank 3) seems to be always first.
+After it, comes processes 7, 3, 5, 1, 4, 6. Also, reciprocal order stays the
+same, even if there are less processes than 8.

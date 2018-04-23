@@ -1,0 +1,8 @@
+By running command e.g. 'make target1' make tries to build target1, which
+needs target3. The output is following
+
+make: Circular target2 <- target1 dependency dropped.
+make: Nothing to be done for 'target1'.
+
+So, make notices that dependency chain is circular, i.e. infinite loop,
+and it cannot be executed.

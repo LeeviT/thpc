@@ -1,0 +1,13 @@
+To define the clock frequency of my system, I used
+Fortran program (source: infloop.f95), which executes infinite loop
+doing some simple arithmetics to maintain frequency near 100%.
+
+Model of my CPU is Intel(R) Core(TM) i5-2540M CPU @ 2.60GHz but due to
+frequency boost technology, theoretical limit for frequency is 3.30GHz.
+
+While running infloop, cpuinfo gives values 3276.732MHz, 3262.509MHz,
+3090.338MHz and 3090.301MHz for clock frequency. My CPU has only two
+(the first two values) but it uses multithreading so in addition to
+"real" cores there are two more "virtual" cores (the last two values).
+Anyway, cpuinfo gives pretty accurate and right values for maximum clock
+frequency.

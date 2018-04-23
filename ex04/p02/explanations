@@ -1,0 +1,19 @@
+CPU times with option -O0:
+
+CPU time spent in C=A*B product calculation   6.87359095
+CPU time spent in C=A^T*B product calculation   3.65205383
+CPU time spent in C=A*B^T product calculation   14.5910168
+
+C=A^T*B is faster to calculate than just C=A*B because due to transpose of A,
+program uses some kind of blocking while accessing memory. But C=A*B^T takes
+more time than the other two calculations because matrices a, b and c are
+trying to use some kind of strides while accessing memory.
+
+CPU times with option -O3:
+
+CPU time spent in C=A*B product calculation   2.00048089E-06
+CPU time spent in C=A^T*B product calculation   8.00006092E-06
+CPU time spent in C=A*B^T product calculation   9.98377800E-07
+
+Now the order of CPU times is reversed because compiler unrolls loops and
+uses some advanced memory accessing method.

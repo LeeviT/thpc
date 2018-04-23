@@ -1,0 +1,7 @@
+Program output:
+
+CPU time consumed, unformatted output:   1.16849506
+CPU time consumed, formatted output:   10.1046247
+
+So, it's clear that writing formatted output takes a lot of more time than
+writing unformatted output.

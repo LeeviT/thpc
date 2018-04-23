@@ -1,0 +1,7 @@
+Compiling and linking:
+
+$ mpif90 -o p04 p04.f90
+
+Running:
+
+$ mpirun -np 2 ./p04

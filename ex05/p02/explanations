@@ -1,0 +1,13 @@
+a) CPU time consumed: 1.00463605
+
+b) CPU time consumed: 0.874835014
+
+c) CPU time consumed: 2.41989996E-02
+
+d) CPU time consumed: 2.37280000E-02
+
+Option -fomit-frame-pointer gives a little performance boost because it
+helps computer to work better with stack. There is no basically any
+difference between using -O2 flag and both, -O2 and -fomit_frame_pointer,
+flag because -O2 already turns -fomit_frame_pointer on, so there's no need
+to do it twice.

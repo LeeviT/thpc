@@ -1,0 +1,44 @@
+a) First I started debugger session with program 'gauss'
+
+$ gdb gauss
+
+Then I set the breakpoint to be in the of subroutine gauss
+
+b gauss
+
+After that I started running program gauss and redirected 'matrix' as an
+input
+
+run < matrix
+
+By then, debugger automatically waits at the breakpoint and I'm able to
+print value of b by running 'p b', output
+
+$1 = (0.428892365341, 0.30461736686939, 0.18965374754716999, 0.19343115640521999)
+
+And value of x by running 'p x', output
+
+$2 = (0, 0, 0, 0)
+
+
+b) To set the breakpoint at the end of backsubstitution loop,
+command (in gdb session)
+
+b gauss.f90:59
+
+And again, to start executing program with input
+
+run < matrix
+
+By then, debugger automatically waits at the breakpoint and to print value
+of 'ss' variable after every loop, command
+
+display ss
+
+Now one should execute program forwward (e.g. by 'continue' command) and
+value of 'ss' will be printed after every loop. Values of 'ss' are
+
+1: ss = -0.36924162090909646
+1: ss = -0.028288423962739256
+1: ss = -0.0069926683737533274
+1: ss = -0.0069926683737533274

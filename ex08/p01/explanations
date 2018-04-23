@@ -1,0 +1,27 @@
+Compile:
+
+$ mpif90 -O2 -g -o md1d md1d.f90
+
+Execute:
+
+$ mpirun -n 8 ./md1d 640000 0.01 1000 1 0
+
+
+Wall clock times with different amounts of processor cores:
+cores   |   wall clock time (seconds)
+1       |   20.4
+2       |   16.2
+4       |   14.5
+8       |   25.2
+
+
+Program automatically distributes input parameters to all processors.
+Then it divides timesteps into intervals to all processors and loops over
+the intervals. On every times step, program uses MPI to send info to
+neighboring processes, about particles that are close to boundaries.
+Once info is sent, it is used to calculate U and acceleration.
+
+On every timestep also the energies from all the processors are
+summed to root processor, using mpi_reduce.
+
+I executed the code on Melkki cluster, which uses shared memory.
